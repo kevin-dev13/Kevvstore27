@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kategori Produk</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #1f2225;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #1f2225;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-container img {
+            height: 50px;
+            width: auto;
+        }
+
+        /* Kategori */
+        .kategori-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 90px 0 15px;
+            position: relative;
+        }
+
+        .kategori-container div {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* Warna kategori aktif */
+        .kategori-container .active {
+            background-color: orange;
+        }
+
+        /* Produk */
+        .produk-list {
+            display: none;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .produk-card {
+            width: 150px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .produk-card img {
+            width: 100%;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        /* Menu Bawah */
+        .bottom-menu {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #1f2225;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            border-top: 1px solid #ccc;
+            box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .bottom-menu div {
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #007bff;
+        }
+
+        .bottom-menu i {
+            font-size: 20px;
+        }
+
+        .bottom-menu div:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="logo-container">
+        <img src="kevv-reload/img/nav.png" alt="Logo">
+    </div>
+</div>
+
+<!-- Kategori -->
+<div class="kategori-container">
+    <div id="btn-pulsa" onclick="showCategory('pulsa')">Pulsa</div>
+    <div id="btn-paket-data" onclick="showCategory('paket-data')">Paket Data</div>
+    <div id="btn-e-wallet" onclick="showCategory('e-wallet')">E-Wallet</div>
+    <div id="btn-pln" onclick="showCategory('pln')">PLN</div>
+</div>
+
+<!-- Container -->
+<div class="container">
+    
+    <!-- Pulsa -->
+    <div id="pulsa" class="produk-list">
+        <div class="produk-card" onclick="redirectTo('kevv-reload/page/tsel.html')">
+            <img src="kevv-reload/img/tsel.jpg" alt="Pulsa Telkomsel">
+            <h3>Telkomsel</h3>
+        </div>
+        <div class="produk-card" onclick="redirectTo('kevv-reload/page/xl.html')">
+            <img src="kevv-reload/img/xl.jpg" alt="Pulsa XL Axiata">
+            <h3>XL Axiata</h3>
+        </div>
+        <div class="produk-card" onclick="redirectTo('kevv-reload/page/axis.html')">
+            <img src="kevv-reload/img/axis.jpg" alt="Pulsa Axis">
+            <h3>Axis</h3>
+        </div>
+        <div class="produk-card" onclick="redirectTo('kevv-reload/page/tri.html')">
+            <img src="kevv-reload/img/tri.jpg" alt="Pulsa Tri">
+            <h3>Tri</h3>
+        </div>
+        <div class="produk-card" onclick="redirectTo('kevv-reload/page/indosat.html')">
+            <img src="kevv-reload/img/sat.jpg" alt="Pulsa Indosat">
+            <h3>Indosat</h3>
+        </div>
+        <div class="produk-card" onclick="redirectTo('kevv-reload/page/smart.html')">
+            <img src="/kevv-reload/img/smart.jpg" alt="Pulsa Smartfren">
+            <h3>Smartfren</h3>
+        </div>
+    </div>
+
+    <!-- Paket Data -->
+    <div id="paket-data" class="produk-list">
+        <div class="produk-card" onclick="redirectTo('kevv-reload/page/data-telkomsel.html')">
+            <img src="kevv-reload/img/tsel.jpg" alt="Paket Data XL Axiata">
+            <h3>Telkomsel</h3>
+        </div>
+        <div class="produk-card" onclick="redirectTo('kevv-reload/page/data-xl.html')">
+            <img src="kevv-reload/img/xl.jpg" alt="Paket Data XL Axiata">
+            <h3>XL Axiata</h3>
+        </div>
+        <div class="produk-card" onclick="redirectTo('kevv-reload/page/data-axis.html')">
+            <img src="kevv-reload/img/axis.jpg" alt="Paket Data Axis">
+            <h3>Axis</h3>
+        </div>
+        <div class="produk-card" onclick="redirectTo('kevv-reload/page/data-tri.html')">
+            <img src="kevv-reload/img/tri.jpg" alt="Paket Data Tri">
+            <h3>Tri</h3>
+        </div>
+        <div class="produk-card" onclick="redirectTo('kevv-reload/page/data-indosat.html')">
+            <img src="kevv-reload/img/sat.jpg" alt="Paket Data Indosat">
+            <h3>Indosat</h3>
+        </div>
+        <div class="produk-card" onclick="redirectTo('kevv-reload/page/data-smartfren.html')">
+            <img src="kevv-reload/img/smart.jpg" alt="Paket Data Smartfren">
+            <h3>Smartfren</h3>
+        </div>
+    </div>
+
+    <!-- E-Wallet -->
+    <div id="e-wallet" class="produk-list">
+        <div class="produk-card" onclick="redirectTo('kevv-reload/page/dana.html')">
+            <img src="kevv-reload/img/dana.jpeg" alt="E-Wallet Dana">
+            <h3>Dana</h3>
+        </div>
+        <div class="produk-card" onclick="redirectTo('kevv-reload/page/gopay.html')">
+            <img src="kevv-reload/img/gopay.png" alt="E-Wallet Gopay">
+            <h3>Gopay</h3>
+        </div>
+        <div class="produk-card" onclick="redirectTo('kevv-reload/page/spay.html')">
+            <img src="kevv-reload/img/spay.png" alt="E-Wallet Shopeepay">
+            <h3>Shopeepay</h3>
+        </div>
+        <div class="produk-card" onclick="redirectTo('kevv-reload/page/linkaja.html')">
+            <img src="kevv-reload/img/linkaja.png" alt="E-Wallet LinkAja">
+            <h3>LinkAja</h3>
+        </div>
+        <div class="produk-card" onclick="redirectTo('kevv-reload/page/ovo.html')">
+            <img src="kevv-reload/img/ovo.jpeg" alt="E-Wallet OVO">
+            <h3>OVO</h3>
+        </div>
+    </div>
+
+    <!-- PLN -->
+    <div id="pln" class="produk-list">
+        <div class="produk-card" onclick="redirectTo('kevv-reload/page/pln.html')">
+            <img src="kevv-reload/img/pln.jpg" alt="Token PLN">
+            <h3>Token PLN</h3>
+        </div>
+    </div>
+</div>
+    
+<!-- Menu Bawah -->
+<div class="bottom-menu">
+    <div onclick="redirectTo('index.html')">
+        <i class="bi bi-house-door-fill"></i>
+        <span>Home</span>
+    </div>
+    <div onclick="redirectTo('kevv-reload/about.html')">
+        <i class="bi bi-info-circle-fill"></i>
+        <span>About</span>
+    </div>
+</div>
+
+<!-- Link Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+<script>
+    function showCategory(category) {
+        // Sembunyikan semua kategori
+        document.querySelectorAll('.produk-list').forEach(el => el.style.display = 'none');
+        // Tampilkan kategori yang dipilih
+        document.getElementById(category).style.display = 'flex';
+
+        // Hapus status aktif dari semua tombol kategori
+        document.querySelectorAll('.kategori-container div').forEach(el => el.classList.remove('active'));
+        // Tambahkan status aktif ke tombol yang dipilih
+        document.getElementById("btn-" + category).classList.add('active');
+
+        // Simpan kategori terakhir di localStorage
+        localStorage.setItem('selectedCategory', category);
+    }
+
+    function redirectTo(page) {
+        window.location.href = page;
+    }
+
+    window.onload = function() {
+        // Ambil kategori terakhir yang dipilih
+        let lastCategory = localStorage.getItem('selectedCategory') || 'pulsa';
+        showCategory(lastCategory);
+    };
+</script>
+
+</body>
+</html>
