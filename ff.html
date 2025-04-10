@@ -66,7 +66,7 @@
             <option value="Weekly Lite Membership Rp. 25.000">Weekly Lite Membership Rp. 25.000</option>
             <option value="Weekly Membership Rp. 40.000">Weekly Membership Rp. 40.000</option>
             <option value="Monthly Membership Rp. 100.000">Monthly Membership Rp. 100.000</option>
-            <option value="Card Rp. 50.000">BP Card Rp. 50.000</option>
+            <option value="BP Card Rp. 50.000">BP Card Rp. 50.000</option>
         </select><br>
 
         <label for="diamond">Diamond (Opsional):</label>
@@ -76,7 +76,10 @@
             <option value="12 Diamond Rp. 3.000">12 Diamond Rp. 3.000</option>
             <option value="50 Diamond Rp. 9.000">50 Diamond Rp. 9.000</option>
             <option value="70 Diamond Rp. 11.000">70 Diamond Rp. 11.000</option>
+            <option value="100 Diamond Rp. 18.000">100 Diamond Rp. 18.000</option>
             <option value="140 Diamond Rp. 21.000">140 Diamond Rp. 21.000</option>
+            <option value="210 Diamond Rp. 32.000">210 Diamond Rp. 32.000</option>
+            <option value="280 Diamond Rp. 44.000">280 Diamond Rp. 44.000</option>
             <option value="355 Diamond Rp. 50.000">355 Diamond Rp. 50.000</option>
             <option value="720 Diamond Rp. 100.000">720 Diamond Rp. 100.000</option>
             <option value="1.450 Diamond Rp. 200.000">1.450 Diamond Rp. 200.000</option>
@@ -98,11 +101,14 @@
         let message = `Kategori: Free Fire\nID GAME: ${idGame}\n`;
 
         if (membership !== "") {
-            message += `Membership: ${membership}`;
-        } else if (diamond !== "") {
+            message += `Membership: ${membership}\n`;
+        }
+        if (diamond !== "") {
             message += `Diamond: ${diamond}`;
-        } else {
-            alert('Pilih salah satu antara Membership atau Diamond!');
+        }
+
+        if (membership === "" && diamond === "") {
+            alert('Pilih setidaknya satu antara Membership atau Diamond!');
             return;
         }
 
